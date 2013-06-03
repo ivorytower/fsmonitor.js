@@ -35,7 +35,7 @@ class NodeWatcher extends EventEmitter
 
   removeFolder: (relpath) ->
     if @_watchers.hasOwnProperty(relpath)
-      @_watchers[relpath].close()
+      @_watchers[relpath]?.close()
       delete @_watchers[relpath]
       delete @_broken[relpath]
 
